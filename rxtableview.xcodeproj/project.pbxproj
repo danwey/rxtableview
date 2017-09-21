@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8093C8921F56C7D0000FA8B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093C8911F56C7D0000FA8B6 /* AppDelegate.swift */; };
+		8093C8941F56C7D0000FA8B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093C8931F56C7D0000FA8B6 /* ViewController.swift */; };
+		8093C8971F56C7D0000FA8B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093C8951F56C7D0000FA8B6 /* Main.storyboard */; };
+		8093C8991F56C7D0000FA8B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8093C8981F56C7D0000FA8B6 /* Assets.xcassets */; };
+		8093C89C1F56C7D0000FA8B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093C89A1F56C7D0000FA8B6 /* LaunchScreen.storyboard */; };
+		8093C8A61F57A4A9000FA8B6 /* DownloadSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093C8A51F57A4A9000FA8B6 /* DownloadSong.swift */; };
+		8A04B3D11F57F37F007469AA /* DownloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04B3CF1F57F37F007469AA /* DownloadTableViewCell.swift */; };
+		8A04B3D21F57F37F007469AA /* DownloadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A04B3D01F57F37F007469AA /* DownloadTableViewCell.xib */; };
+		8A1FA89A1F590E0D0053A38D /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1FA8991F590E0D0053A38D /* test.swift */; };
+		8A1FA89C1F593B120053A38D /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1FA89B1F593B120053A38D /* TestViewModel.swift */; };
+		8A5699C41F6F59D700D50AF7 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */; };
+		8A5699C51F6F59D700D50AF7 /* WeiMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */; };
+		8A5699C71F6F5A3100D50AF7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5699C61F6F5A3100D50AF7 /* Song.swift */; };
+		8A77E81A1F667A1200AC24DF /* DownLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77E8191F667A1200AC24DF /* DownLoadViewController.swift */; };
+		8A77E8211F66857400AC24DF /* DownLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77E8201F66857400AC24DF /* DownLoadManager.swift */; };
+		8A7C51691F73959D00ED096E /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C51681F73959D00ED096E /* Download.swift */; };
+		8ACF1DD21F6F62480028CB47 /* 郑俊弘 - 投降吧.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */; };
+		8ACF1DD71F70F2FD0028CB47 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF1DD61F70F2FD0028CB47 /* ResourceLoader.swift */; };
+		D1290A3938698B156A3E106D /* Pods_rxtableview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE73109092B429E347EF553 /* Pods_rxtableview.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0BF6EEEEE0E595EA0CE2DD07 /* Pods-rxtableview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxtableview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rxtableview/Pods-rxtableview.debug.xcconfig"; sourceTree = "<group>"; };
+		240A6698F4996D584E8C3C0B /* Pods-rxtableview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxtableview.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxtableview/Pods-rxtableview.release.xcconfig"; sourceTree = "<group>"; };
+		8093C88E1F56C7D0000FA8B6 /* rxtableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rxtableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8093C8911F56C7D0000FA8B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8093C8931F56C7D0000FA8B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8093C8961F56C7D0000FA8B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8093C8981F56C7D0000FA8B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8093C89B1F56C7D0000FA8B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8093C89D1F56C7D0000FA8B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8093C8A51F57A4A9000FA8B6 /* DownloadSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSong.swift; sourceTree = "<group>"; };
+		8A04B3CF1F57F37F007469AA /* DownloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTableViewCell.swift; sourceTree = "<group>"; };
+		8A04B3D01F57F37F007469AA /* DownloadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadTableViewCell.xib; sourceTree = "<group>"; };
+		8A1FA8991F590E0D0053A38D /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		8A1FA89B1F593B120053A38D /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		8A5049CD1F6A37AF005713E6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiMusicManager.swift; sourceTree = "<group>"; };
+		8A5699C61F6F5A3100D50AF7 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		8A77E8191F667A1200AC24DF /* DownLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DownLoadViewController.swift; path = rxtableview/download/viewcontroller/DownLoadViewController.swift; sourceTree = SOURCE_ROOT; };
+		8A77E8201F66857400AC24DF /* DownLoadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownLoadManager.swift; sourceTree = "<group>"; };
+		8A7C51681F73959D00ED096E /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "郑俊弘 - 投降吧.mp3"; sourceTree = "<group>"; };
+		8ACF1DD61F70F2FD0028CB47 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		8FE73109092B429E347EF553 /* Pods_rxtableview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxtableview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8093C88B1F56C7D0000FA8B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1290A3938698B156A3E106D /* Pods_rxtableview.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		035769E9C6CAD0C020A339AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BF6EEEEE0E595EA0CE2DD07 /* Pods-rxtableview.debug.xcconfig */,
+				240A6698F4996D584E8C3C0B /* Pods-rxtableview.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8093C8851F56C7D0000FA8B6 = {
+			isa = PBXGroup;
+			children = (
+				8A5049CD1F6A37AF005713E6 /* MyPlayground.playground */,
+				8093C8901F56C7D0000FA8B6 /* rxtableview */,
+				8093C88F1F56C7D0000FA8B6 /* Products */,
+				035769E9C6CAD0C020A339AC /* Pods */,
+				92C26482AB56EC0E84E71579 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8093C88F1F56C7D0000FA8B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8093C88E1F56C7D0000FA8B6 /* rxtableview.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8093C8901F56C7D0000FA8B6 /* rxtableview */ = {
+			isa = PBXGroup;
+			children = (
+				8ACF1DD01F6F61FA0028CB47 /* Resources */,
+				8A5699C11F6F590700D50AF7 /* musicplayer */,
+				8A77E81B1F66811C00AC24DF /* download */,
+				8093C8911F56C7D0000FA8B6 /* AppDelegate.swift */,
+				8093C8931F56C7D0000FA8B6 /* ViewController.swift */,
+				8093C8951F56C7D0000FA8B6 /* Main.storyboard */,
+				8093C8981F56C7D0000FA8B6 /* Assets.xcassets */,
+				8093C89A1F56C7D0000FA8B6 /* LaunchScreen.storyboard */,
+				8093C89D1F56C7D0000FA8B6 /* Info.plist */,
+				8A1FA8991F590E0D0053A38D /* test.swift */,
+				8A1FA89B1F593B120053A38D /* TestViewModel.swift */,
+			);
+			path = rxtableview;
+			sourceTree = "<group>";
+		};
+		8A04B3CE1F57F348007469AA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8A04B3CF1F57F37F007469AA /* DownloadTableViewCell.swift */,
+				8A04B3D01F57F37F007469AA /* DownloadTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		8A5699C11F6F590700D50AF7 /* musicplayer */ = {
+			isa = PBXGroup;
+			children = (
+				8A5699C61F6F5A3100D50AF7 /* Song.swift */,
+				8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */,
+				8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */,
+				8ACF1DD61F70F2FD0028CB47 /* ResourceLoader.swift */,
+			);
+			path = musicplayer;
+			sourceTree = "<group>";
+		};
+		8A77E81B1F66811C00AC24DF /* download */ = {
+			isa = PBXGroup;
+			children = (
+				8A77E81E1F66819C00AC24DF /* viewcontroller */,
+				8A77E81D1F66818200AC24DF /* model */,
+				8A77E81C1F66816E00AC24DF /* viewmodel */,
+				8A04B3CE1F57F348007469AA /* cells */,
+			);
+			path = download;
+			sourceTree = "<group>";
+		};
+		8A77E81C1F66816E00AC24DF /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8A77E8201F66857400AC24DF /* DownLoadManager.swift */,
+				8A7C51681F73959D00ED096E /* Download.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		8A77E81D1F66818200AC24DF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8093C8A51F57A4A9000FA8B6 /* DownloadSong.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8A77E81E1F66819C00AC24DF /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				8A77E8191F667A1200AC24DF /* DownLoadViewController.swift */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
+		8ACF1DD01F6F61FA0028CB47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		92C26482AB56EC0E84E71579 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FE73109092B429E347EF553 /* Pods_rxtableview.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8093C88D1F56C7D0000FA8B6 /* rxtableview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8093C8A01F56C7D0000FA8B6 /* Build configuration list for PBXNativeTarget "rxtableview" */;
+			buildPhases = (
+				1B18F367B1978F64DD8FD4E1 /* [CP] Check Pods Manifest.lock */,
+				8093C88A1F56C7D0000FA8B6 /* Sources */,
+				8093C88B1F56C7D0000FA8B6 /* Frameworks */,
+				8093C88C1F56C7D0000FA8B6 /* Resources */,
+				2BE44B543A57B8350D9E6FC3 /* [CP] Embed Pods Frameworks */,
+				5FC6B694FBBBE0429511F1A0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rxtableview;
+			productName = rxtableview;
+			productReference = 8093C88E1F56C7D0000FA8B6 /* rxtableview.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8093C8861F56C7D0000FA8B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = wei;
+				TargetAttributes = {
+					8093C88D1F56C7D0000FA8B6 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = 8093C8891F56C7D0000FA8B6 /* Build configuration list for PBXProject "rxtableview" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8093C8851F56C7D0000FA8B6;
+			productRefGroup = 8093C88F1F56C7D0000FA8B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8093C88D1F56C7D0000FA8B6 /* rxtableview */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8093C88C1F56C7D0000FA8B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ACF1DD21F6F62480028CB47 /* 郑俊弘 - 投降吧.mp3 in Resources */,
+				8093C89C1F56C7D0000FA8B6 /* LaunchScreen.storyboard in Resources */,
+				8A04B3D21F57F37F007469AA /* DownloadTableViewCell.xib in Resources */,
+				8093C8991F56C7D0000FA8B6 /* Assets.xcassets in Resources */,
+				8093C8971F56C7D0000FA8B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B18F367B1978F64DD8FD4E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rxtableview-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BE44B543A57B8350D9E6FC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-rxtableview/Pods-rxtableview-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rxtableview/Pods-rxtableview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FC6B694FBBBE0429511F1A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rxtableview/Pods-rxtableview-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8093C88A1F56C7D0000FA8B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A77E81A1F667A1200AC24DF /* DownLoadViewController.swift in Sources */,
+				8A5699C51F6F59D700D50AF7 /* WeiMusicManager.swift in Sources */,
+				8ACF1DD71F70F2FD0028CB47 /* ResourceLoader.swift in Sources */,
+				8093C8941F56C7D0000FA8B6 /* ViewController.swift in Sources */,
+				8A1FA89A1F590E0D0053A38D /* test.swift in Sources */,
+				8A77E8211F66857400AC24DF /* DownLoadManager.swift in Sources */,
+				8A5699C71F6F5A3100D50AF7 /* Song.swift in Sources */,
+				8A04B3D11F57F37F007469AA /* DownloadTableViewCell.swift in Sources */,
+				8093C8A61F57A4A9000FA8B6 /* DownloadSong.swift in Sources */,
+				8A5699C41F6F59D700D50AF7 /* MusicViewController.swift in Sources */,
+				8093C8921F56C7D0000FA8B6 /* AppDelegate.swift in Sources */,
+				8A1FA89C1F593B120053A38D /* TestViewModel.swift in Sources */,
+				8A7C51691F73959D00ED096E /* Download.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8093C8951F56C7D0000FA8B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8093C8961F56C7D0000FA8B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8093C89A1F56C7D0000FA8B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8093C89B1F56C7D0000FA8B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8093C89E1F56C7D0000FA8B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8093C89F1F56C7D0000FA8B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8093C8A11F56C7D0000FA8B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BF6EEEEE0E595EA0CE2DD07 /* Pods-rxtableview.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SWEV8SETAZ;
+				INFOPLIST_FILE = rxtableview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.newwork.rxtableview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8093C8A21F56C7D0000FA8B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240A6698F4996D584E8C3C0B /* Pods-rxtableview.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SWEV8SETAZ;
+				INFOPLIST_FILE = rxtableview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.newwork.rxtableview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8093C8891F56C7D0000FA8B6 /* Build configuration list for PBXProject "rxtableview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8093C89E1F56C7D0000FA8B6 /* Debug */,
+				8093C89F1F56C7D0000FA8B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8093C8A01F56C7D0000FA8B6 /* Build configuration list for PBXNativeTarget "rxtableview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8093C8A11F56C7D0000FA8B6 /* Debug */,
+				8093C8A21F56C7D0000FA8B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8093C8861F56C7D0000FA8B6 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_rxtableview {
+  umbrella header "Pods-rxtableview-umbrella.h"
+
+  export *
+  module * { export * }
+}
