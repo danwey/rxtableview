@@ -19,20 +19,24 @@ class MusicViewController: UIViewController {
     @IBOutlet weak var stop_Button: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var progress: UIProgressView!
+    @IBOutlet weak var lrcView: LrcView!
+    
+    
     var canSetSlider = true
     let disposeBag = DisposeBag()
     
     //要不要写成单例？
     override func viewDidLoad() {
         super.viewDidLoad()
-        coverImage.layer.cornerRadius = 100
-        coverImage.layer.masksToBounds = true
         musicManager.delegete = self
 //        manager.valueVariable.asDriver().drive(progress.rx.progress).disposed(by: disposeBag)
         
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] (timer) in
+            self?.lrcView.progress(1.0)
+        }
+        RunLoop.current.add(timer, forMode: .commonModes)
         musicManager.start()
         musicManager.play()
     }

@@ -88,11 +88,23 @@ class LrcView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = UIColor.yellow
-        tableView = UITableView(frame: CGRect.zero, style: .plain)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+//        setup()
+    }
+    
+    override func awakeFromNib() {
+        setup()
+    }
+    
+    func setup() {
+//        backgroundColor = .clear
+        tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
@@ -100,7 +112,7 @@ class LrcView: UIView {
         tableView.contentInset = UIEdgeInsets(top: self.tableView.frame.height/2, left: 0, bottom: self.tableView.frame.height/2, right: 0)
         tableView.showsVerticalScrollIndicator = false
         
-        imageView = UIImageView(frame: CGRect.zero)
+        imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "zxy.jpg")
         addSubview(imageView)
         visualView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
@@ -108,7 +120,7 @@ class LrcView: UIView {
         visualView.alpha = 0.0
         imageView.addSubview(visualView)
         
-        scrollView = UIScrollView(frame: CGRect.zero)
+        scrollView = UIScrollView(frame: .zero)
         scrollView.addSubview(tableView)
         scrollView.delegate = self
         scrollView.showsHorizontalScrollIndicator = false
@@ -117,10 +129,6 @@ class LrcView: UIView {
         
         reloaddata()
         tableView.reloadData()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func reloaddata() {

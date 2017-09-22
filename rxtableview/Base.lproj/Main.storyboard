@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5yE-Nl-NZZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5yE-Nl-NZZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -117,10 +117,6 @@
                                     <action selector="musicStop:" destination="d81-dL-7lV" eventType="touchUpInside" id="B96-YJ-5op"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="uZA-uN-ZgE">
-                                <rect key="frame" x="83" y="144" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TQ-et-6m7">
                                 <rect key="frame" x="16" y="598" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -138,7 +134,7 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BI1-Bk-9d4">
-                                <rect key="frame" x="49" y="416" width="247" height="2"/>
+                                <rect key="frame" x="49" y="519" width="247" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rj-pd-kYA">
@@ -151,13 +147,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="列表"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knv-UN-xxm" customClass="LrcView" customModule="rxtableview" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="74" width="375" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="fll-nO-7fa"/>
                     </view>
                     <connections>
-                        <outlet property="coverImage" destination="uZA-uN-ZgE" id="Lch-me-C9f"/>
                         <outlet property="label" destination="55K-7s-qE2" id="Ebq-CM-AcV"/>
+                        <outlet property="lrcView" destination="knv-UN-xxm" id="tbC-MD-hxM"/>
                         <outlet property="play_Button" destination="F1H-ce-mHr" id="X4i-MQ-9O9"/>
                         <outlet property="progress" destination="BI1-Bk-9d4" id="0O3-OM-Kq9"/>
                         <outlet property="slider" destination="ecI-tf-fek" id="fv7-yT-XJ4"/>
@@ -167,10 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3b-Yh-Pun" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="107"/>
+            <point key="canvasLocation" x="712.79999999999995" y="106.59670164917542"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="test" width="262" height="325"/>
-    </resources>
 </document>
