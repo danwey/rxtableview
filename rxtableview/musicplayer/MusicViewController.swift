@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 //这句到时放到全局位置
 let musicManager = WeiMusicManager.share
@@ -31,12 +32,6 @@ class MusicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         musicManager.delegete = self
-//        manager.valueVariable.asDriver().drive(progress.rx.progress).disposed(by: disposeBag)
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] (timer) in
-            self?.lrcView.progress(1.0)
-        }
-        RunLoop.current.add(timer, forMode: .commonModes)
         musicManager.start()
         musicManager.play()
     }
@@ -95,6 +90,7 @@ extension MusicViewController:MusicDelegate {
             let min1 = Int(duration) / 60
             let sec1 = Int(duration) % 60
             self.timeLabel.text = String(format:"%02d:%02d",min1,sec1)
+            self.lrcView.progress(curduration)
         }
     }
     func loadTime(progress: Float) {

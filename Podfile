@@ -6,6 +6,8 @@ target 'rxtableview' do
   use_frameworks!
   pod 'RxSwift' , '~> 4.0.0-alpha.1'
   pod 'RxCocoa' , '~> 4.0.0-alpha.1'
+  pod 'SwiftyJSON', '~> 4.0.0-alpha.1'
+  pod 'Kingfisher', '~> 4.0.1'
 #  pod 'RxDataSources', '~> 2.0.1'
   # Pods for rxtableview
 

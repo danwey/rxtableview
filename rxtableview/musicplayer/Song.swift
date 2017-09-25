@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct Song {
+struct Song : Decodable {
     var name:String?
     var user:String?
     var url:String?
     var cover:String?
+    var lrc:String?
+    
+    init(_ json: JSON) {
+        name = json["name"].stringValue
+        user = json["user"].stringValue
+        url = json["url"].stringValue
+        cover = json["cover"].stringValue
+        lrc = json["lrc"].stringValue
+    }
 }

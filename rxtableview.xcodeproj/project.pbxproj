@@ -29,7 +29,6 @@
 		8A77E8211F66857400AC24DF /* DownLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77E8201F66857400AC24DF /* DownLoadManager.swift */; };
 		8A7C51691F73959D00ED096E /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C51681F73959D00ED096E /* Download.swift */; };
 		8ACF1DD21F6F62480028CB47 /* 郑俊弘 - 投降吧.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */; };
-		8ACF1DD71F70F2FD0028CB47 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF1DD61F70F2FD0028CB47 /* ResourceLoader.swift */; };
 		D1290A3938698B156A3E106D /* Pods_rxtableview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE73109092B429E347EF553 /* Pods_rxtableview.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 		8A77E8201F66857400AC24DF /* DownLoadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownLoadManager.swift; sourceTree = "<group>"; };
 		8A7C51681F73959D00ED096E /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "郑俊弘 - 投降吧.mp3"; sourceTree = "<group>"; };
-		8ACF1DD61F70F2FD0028CB47 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
 		8FE73109092B429E347EF553 /* Pods_rxtableview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxtableview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,7 +139,6 @@
 				8A5699C61F6F5A3100D50AF7 /* Song.swift */,
 				8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */,
 				8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */,
-				8ACF1DD61F70F2FD0028CB47 /* ResourceLoader.swift */,
 			);
 			path = musicplayer;
 			sourceTree = "<group>";
@@ -300,13 +297,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rxtableview/Pods-rxtableview-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,7 +340,6 @@
 				8A16DD461F750B0A00CE9601 /* LrcView.swift in Sources */,
 				8A77E81A1F667A1200AC24DF /* DownLoadViewController.swift in Sources */,
 				8A5699C51F6F59D700D50AF7 /* WeiMusicManager.swift in Sources */,
-				8ACF1DD71F70F2FD0028CB47 /* ResourceLoader.swift in Sources */,
 				8093C8941F56C7D0000FA8B6 /* ViewController.swift in Sources */,
 				8A1FA89A1F590E0D0053A38D /* test.swift in Sources */,
 				8A77E8211F66857400AC24DF /* DownLoadManager.swift in Sources */,

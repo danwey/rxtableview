@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class LrcData {
     var beginTime: TimeInterval = 0
@@ -16,7 +17,7 @@ class LrcData {
     func getPregress(_ duration: TimeInterval) -> Float {
         let t = endTime - beginTime
         let d = duration - beginTime
-        if beginTime < duration && duration < endTime {
+        if beginTime <= duration && duration < endTime {
             return Float(d/t)
         }
         return 0
@@ -41,6 +42,12 @@ class LrcInfo {
         let data = handle?.readDataToEndOfFile()
         handle?.closeFile()
         let string = String(data: data!, encoding: String.Encoding.utf8)
+        setup(string)
+    }
+    init(_ string: String?) {
+        setup(string)
+    }
+    func setup(_ string:String?) {
         let array = (string?.components(separatedBy: "\n"))!
         
         var lasttime: String = ""
@@ -63,7 +70,7 @@ class LrcInfo {
     func getIndex(_ duration:TimeInterval) -> Int {
         var i = 0
         for item in list {
-            if item.beginTime < duration && item.endTime > duration {
+            if item.beginTime <= duration && duration < item.endTime {
                 return i
             }
             i += 1
@@ -84,7 +91,6 @@ class LrcView: UIView {
     var currentIndex = 0
     var playIndex = 0
     var isTouch = false
-    var time: TimeInterval = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -93,15 +99,19 @@ class LrcView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        setup()
     }
     
     override func awakeFromNib() {
         setup()
     }
     
+    var song: Song? {
+        willSet {
+            setup()
+        }
+    }
+    
     func setup() {
-//        backgroundColor = .clear
         tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .clear
@@ -113,7 +123,7 @@ class LrcView: UIView {
         tableView.showsVerticalScrollIndicator = false
         
         imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "zxy.jpg")
+//        imageView.image = UIImage(named: "zxy.jpg")
         addSubview(imageView)
         visualView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         visualView.frame = imageView.bounds
@@ -132,14 +142,19 @@ class LrcView: UIView {
     }
     
     func reloaddata() {
-        let path = Bundle.main.path(forResource: "120125029", ofType: "lrc")
-        lrc = LrcInfo(path!)
+        if let song = song {
+            imageView.kf.setImage(with: URL.init(string: (song.cover)!))
+    //        let path = Bundle.main.path(forResource: "120125029", ofType: "lrc")
+            URLSession(configuration: URLSessionConfiguration.default).dataTask(with: URL.init(string: (song.lrc)!)!, completionHandler: { [weak self] (data, response, error) in
+                let string = String.init(data: data!, encoding: String.Encoding.utf8)
+                self?.lrc = LrcInfo(string!)
+            }).resume()
+        }
     }
     
     func progress(_ duration:TimeInterval) {
         if let lrc = lrc {
-            time += 0.01
-            let index = lrc.getIndex(time)
+            let index = lrc.getIndex(duration)
             let indexpath = IndexPath(row: index, section: 0)
             if playIndex != index {
                 let lastIndexpath = IndexPath(row: playIndex, section: 0)
@@ -150,8 +165,9 @@ class LrcView: UIView {
                     self.tableView.scrollToRow(at: indexpath, at: .middle, animated: true)
                 }
             }
+            
             let cell = tableView.cellForRow(at: indexpath) as? TableViewCell
-            cell?.progress = time
+            cell?.progress = duration
         }
     }
     
@@ -166,7 +182,10 @@ class LrcView: UIView {
 
 extension LrcView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (lrc?.list.count)!
+        if let lrc = lrc {
+            return lrc.list.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -182,7 +201,7 @@ extension LrcView: UITableViewDelegate {
             var progrpess = scrollView.contentOffset.x / scrollView.frame.width
             progrpess = min(progrpess, 1.0)
             progrpess = max(progrpess, 0.0)
-            visualView.alpha = progrpess*0.8
+            visualView.alpha = progrpess * 0.8
         }
     }
     

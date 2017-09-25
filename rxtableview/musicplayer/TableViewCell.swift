@@ -30,28 +30,19 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        // Initialization code
     }
     
     var data: LrcData? {
-        didSet {
-            progress = 0
-            lrcLabel.text = "\((data?.text)!)"
+        willSet {
+            lrcLabel.text = "\((newValue?.text)!)"
         }
     }
     
-    var progress: TimeInterval = 0 {
-        didSet {
+    var progress: TimeInterval = 0.0 {
+        willSet {
             if let data = data {
-                self.lrcLabel.progress = CGFloat(data.getPregress(progress))
+                self.lrcLabel.progress = CGFloat(data.getPregress(newValue))
             }
         }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

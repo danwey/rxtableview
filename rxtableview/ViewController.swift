@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
@@ -48,6 +49,14 @@ class ViewController: UIViewController {
         
         button.rx.tap.subscribe(onNext: { [weak self] in
 //            self?.down.start()
+            
+            URLSession(configuration: URLSessionConfiguration.default).dataTask(with: URL.init(string: "http://192.168.30.239:8080/api/musicList.json")!, completionHandler: { (data, response, error) in
+                let str = String.init(data: data!, encoding: String.Encoding.utf8)!
+                let json = JSON.init(parseJSON: str)
+                let songs = json["data"].map{ Song($0.1) }
+                musicManager.list = songs
+            }).resume()
+            
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicViewController")
             self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
