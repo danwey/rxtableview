@@ -9,37 +9,32 @@
 import UIKit
 import AVFoundation
 import MediaPlayer
-
-//这句到时放到全局位置
-//let manager = DownLoadManager("temp")
-
-protocol MusicDelegate {
-    func periodicTime(curduration:TimeInterval,duration:TimeInterval)
-    func loadTime(progress: Float)
-}
+import RxSwift
 
 class WeiMusicManager:NSObject {
-    
-    static let share = WeiMusicManager()
-    
-    var player:AVPlayer?
-    var playerItem:AVPlayerItem?
-    var duration:TimeInterval = 0
-    var curduration:TimeInterval = 0
-    var delegete:MusicDelegate?
-    var url:URL?
-    var currentIndex:Int = 0
+    //只有out put
+    var progress = Variable<(TimeInterval,TimeInterval)>((0,0))
+    var downlaodProgress = Variable<(Float)>(0)
+    var song = Variable<Song?>(nil)
+
+    fileprivate var player:AVPlayer?
+    fileprivate var playerItem:AVPlayerItem?
+    fileprivate var duration:TimeInterval = 0
+    fileprivate var curduration:TimeInterval = 0
+    fileprivate var url:URL?
+    fileprivate var currentIndex:Int = 0
+    fileprivate var down: DownLoad?
     public var list:[Song] = []
+    public var test = NSMutableArray()
     var currentSong: Song? {
         return nil
     }
     fileprivate var cover: UIImage? {
         return nil
     }
-
     var playerPeriodicObserver:Any?
-    //初起化
-    private override init() {
+
+    override init() {
         super.init()
         let session = AVAudioSession.sharedInstance()
         do {
@@ -54,24 +49,27 @@ class WeiMusicManager:NSObject {
             return
         }
         let song = list[currentIndex]
-
-        let down = DownLoad(url: URL(string: song.url!)!)
-        down.start()
-        var newurl = URLComponents(url: down.url, resolvingAgainstBaseURL: false)
-        newurl?.scheme = "streaming"
-        let asset = AVURLAsset(url: newurl!.url!)
-        asset.resourceLoader.setDelegate(down, queue: DispatchQueue.main)
-        playerItem = AVPlayerItem(asset: asset)
-        
-        playerItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-        
-        player = AVPlayer(playerItem: playerItem)
-        NotificationCenter.default.addObserver(self, selector: #selector(WeiMusicManager.itemDidFinishPlaying(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-        playerPeriodicObserver = player?.addPeriodicTimeObserver(forInterval: CMTimeMake(3,30), queue: nil, using: { [weak self] (time) in
-            self?.curduration = time.seconds
-            self?.delegete?.periodicTime(curduration: (self?.curduration)!, duration: (self?.duration)!)
-        })
-        updateLockScreenInfo()
+        self.song.value = song
+        down?.stop()
+        down = DownLoad(url: URL(string: song.url!)!,delegate: self)
+        down?.start()
+        if let down = down {
+            var newurl = URLComponents(url: down.url, resolvingAgainstBaseURL: false)
+            newurl?.scheme = "streaming"
+            let asset = AVURLAsset(url: newurl!.url!)
+            asset.resourceLoader.setDelegate(down, queue: DispatchQueue.main)
+            playerItem = AVPlayerItem(asset: asset)
+            
+            playerItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+            
+            player = AVPlayer(playerItem: playerItem)
+            NotificationCenter.default.addObserver(self, selector: #selector(WeiMusicManager.itemDidFinishPlaying(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+            playerPeriodicObserver = player?.addPeriodicTimeObserver(forInterval: CMTimeMake(3,30), queue: nil, using: { [weak self] (time) in
+                self?.curduration = time.seconds
+                self?.progress.value = (curduration: (self?.curduration)!, duration: (self?.duration)!)
+            })
+            updateLockScreenInfo()
+        }
     }
     //停止
     func stop() {
@@ -102,7 +100,16 @@ class WeiMusicManager:NSObject {
     }
     //随机播放
     func random() {
-        
+        //随机排序
+        //        var list = [1,2,3,4,5,6,7,8,9,10,11,12]
+        //        var newlist:[Int] = []
+        //
+        //        for _ in list {
+        //            let index = Int(arc4random()) % list.count
+        //            let value = list.remove(at: index)
+        //            newlist.append(value)
+        //        }
+        //        print(newlist)
     }
     //当前歌曲播放完
     @objc func itemDidFinishPlaying(_ notification: Notification) {
@@ -112,21 +119,28 @@ class WeiMusicManager:NSObject {
             next()
         }
     }
+    func reset() {
+        
+    }
     //暂停
     open func pause() {
         player?.pause()
     }
     //下一首
     open func next() {
-        currentIndex = (currentIndex + 1)%list.count
-        start()
-        play()
+        if list.count > 0 {
+            currentIndex = (currentIndex + 1)%list.count
+            start()
+            play()
+        }
     }
     //上一首
     open func previous() {
-        currentIndex = (currentIndex + list.count - 1)%list.count
-        start()
-        play()
+        if list.count > 0 {
+            currentIndex = (currentIndex + list.count - 1)%list.count
+            start()
+            play()
+        }
     }
     //调节声音大小
     open func volume(value:Float) {
@@ -172,4 +186,9 @@ class WeiMusicManager:NSObject {
     }
 }
 
+extension WeiMusicManager: DownLoadDelegate {
+    func downloadProgress(_ progress: Float) {
+        downlaodProgress.value = progress
+    }
+}
 

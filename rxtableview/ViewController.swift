@@ -56,8 +56,8 @@ class ViewController: UIViewController {
                 let songs = json["data"].map{ Song($0.1) }
                 musicManager.list = songs
             }).resume()
-            
-            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicViewController")
+            let vc = NewViewController()
+//            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicViewController")
             self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
 

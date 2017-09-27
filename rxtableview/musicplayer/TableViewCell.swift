@@ -17,7 +17,8 @@ class LrcLabel: UILabel {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        UIColor.green.set()
+        UIColor(red: 44/255.0, green: 183/255.0, blue: 104/255.0, alpha: 1.0).set()
+//        UIColor.green.set()
         let fillRect = CGRect(x: 0, y: 0, width: progress*rect.width, height: rect.height)
         UIRectFillUsingBlendMode(fillRect, CGBlendMode.sourceIn)
     }
@@ -35,6 +36,7 @@ class TableViewCell: UITableViewCell {
     var data: LrcData? {
         willSet {
             lrcLabel.text = "\((newValue?.text)!)"
+            progress = 0.0
         }
     }
     

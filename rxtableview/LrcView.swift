@@ -36,7 +36,7 @@ class LrcInfo {
         return 0
     }
     var list:[LrcData] = []
-    init(_ path: String) {
+    init(path: String) {
         
         let handle = FileHandle(forReadingAtPath: path)
         let data = handle?.readDataToEndOfFile()
@@ -44,7 +44,7 @@ class LrcInfo {
         let string = String(data: data!, encoding: String.Encoding.utf8)
         setup(string)
     }
-    init(_ string: String?) {
+    init(string: String?) {
         setup(string)
     }
     func setup(_ string:String?) {
@@ -52,7 +52,7 @@ class LrcInfo {
         
         var lasttime: String = ""
         for item in array.reversed() {
-            if item.contains("[ti:") || item.contains("[ar:") || item.contains("[al:") {
+            if item.contains("[ti:") || item.contains("[ar:") || item.contains("[al:") || item.contains("[by:") {
                 continue
             }
             let newItem = item.replacingOccurrences(of: "[", with: "")
@@ -83,7 +83,7 @@ class LrcInfo {
 class LrcView: UIView {
 
     var tableView: UITableView!
-    var visualView: UIVisualEffectView!
+//    var visualView: UIVisualEffectView!
     var scrollView: UIScrollView!
     var imageView: UIImageView!
     
@@ -102,16 +102,18 @@ class LrcView: UIView {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setup()
     }
     
     var song: Song? {
-        willSet {
-            setup()
+        didSet {
+            reloaddata()
         }
     }
     
     func setup() {
+        backgroundColor = .clear
         tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .clear
@@ -122,13 +124,10 @@ class LrcView: UIView {
         tableView.contentInset = UIEdgeInsets(top: self.tableView.frame.height/2, left: 0, bottom: self.tableView.frame.height/2, right: 0)
         tableView.showsVerticalScrollIndicator = false
         
-        imageView = UIImageView(frame: .zero)
-//        imageView.image = UIImage(named: "zxy.jpg")
-        addSubview(imageView)
-        visualView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-        visualView.frame = imageView.bounds
-        visualView.alpha = 0.0
-        imageView.addSubview(visualView)
+//        visualView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+//        visualView.frame = imageView.bounds
+//        visualView.alpha = 0.0
+//        imageView.addSubview(visualView)
         
         scrollView = UIScrollView(frame: .zero)
         scrollView.addSubview(tableView)
@@ -137,8 +136,11 @@ class LrcView: UIView {
         scrollView.isPagingEnabled = true
         addSubview(scrollView)
         
+        imageView = UIImageView(frame: .zero)
+        //        imageView.image = UIImage(named: "zxy.jpg")
+        scrollView.addSubview(imageView)
+        
         reloaddata()
-        tableView.reloadData()
     }
     
     func reloaddata() {
@@ -147,7 +149,10 @@ class LrcView: UIView {
     //        let path = Bundle.main.path(forResource: "120125029", ofType: "lrc")
             URLSession(configuration: URLSessionConfiguration.default).dataTask(with: URL.init(string: (song.lrc)!)!, completionHandler: { [weak self] (data, response, error) in
                 let string = String.init(data: data!, encoding: String.Encoding.utf8)
-                self?.lrc = LrcInfo(string!)
+                self?.lrc = LrcInfo(string:string!)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             }).resume()
         }
     }
@@ -174,7 +179,9 @@ class LrcView: UIView {
     override func layoutSubviews() {
         scrollView.frame = bounds
         imageView.frame = bounds
-        visualView.frame = imageView.bounds
+        imageView.layer.cornerRadius = bounds.width/2
+        imageView.layer.masksToBounds = true
+//        visualView.frame = imageView.bounds
         scrollView.contentSize = CGSize(width:scrollView.frame.width * 2,height:scrollView.frame.height)
         tableView.frame = CGRect(x: frame.width, y: 0, width: frame.width, height: frame.height)
     }
@@ -201,7 +208,6 @@ extension LrcView: UITableViewDelegate {
             var progrpess = scrollView.contentOffset.x / scrollView.frame.width
             progrpess = min(progrpess, 1.0)
             progrpess = max(progrpess, 0.0)
-            visualView.alpha = progrpess * 0.8
         }
     }
     

@@ -22,12 +22,16 @@
 		8A16DD4A1F750C9800CE9601 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A16DD481F750C9800CE9601 /* TableViewCell.xib */; };
 		8A1FA89A1F590E0D0053A38D /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1FA8991F590E0D0053A38D /* test.swift */; };
 		8A1FA89C1F593B120053A38D /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1FA89B1F593B120053A38D /* TestViewModel.swift */; };
+		8A55EC0F1F79ECA700E6909C /* PlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55EC0E1F79ECA700E6909C /* PlayListViewController.swift */; };
 		8A5699C41F6F59D700D50AF7 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */; };
 		8A5699C51F6F59D700D50AF7 /* WeiMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */; };
 		8A5699C71F6F5A3100D50AF7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5699C61F6F5A3100D50AF7 /* Song.swift */; };
 		8A77E81A1F667A1200AC24DF /* DownLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77E8191F667A1200AC24DF /* DownLoadViewController.swift */; };
 		8A77E8211F66857400AC24DF /* DownLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77E8201F66857400AC24DF /* DownLoadManager.swift */; };
 		8A7C51691F73959D00ED096E /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C51681F73959D00ED096E /* Download.swift */; };
+		8A7E9E171F7A319700E1B22A /* PlayListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E9E161F7A319700E1B22A /* PlayListViewController.xib */; };
+		8A7E9E1D1F7B4B8F00E1B22A /* WWSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E9E1C1F7B4B8E00E1B22A /* WWSlider.swift */; };
+		8A7E9E221F7BA76800E1B22A /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E9E211F7BA76800E1B22A /* NewViewController.m */; };
 		8ACF1DD21F6F62480028CB47 /* 郑俊弘 - 投降吧.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */; };
 		D1290A3938698B156A3E106D /* Pods_rxtableview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE73109092B429E347EF553 /* Pods_rxtableview.framework */; };
 /* End PBXBuildFile section */
@@ -53,12 +57,18 @@
 		8A1FA8991F590E0D0053A38D /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		8A1FA89B1F593B120053A38D /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8A5049CD1F6A37AF005713E6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8A55EC0E1F79ECA700E6909C /* PlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewController.swift; sourceTree = "<group>"; };
 		8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiMusicManager.swift; sourceTree = "<group>"; };
 		8A5699C61F6F5A3100D50AF7 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		8A77E8191F667A1200AC24DF /* DownLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DownLoadViewController.swift; path = rxtableview/download/viewcontroller/DownLoadViewController.swift; sourceTree = SOURCE_ROOT; };
 		8A77E8201F66857400AC24DF /* DownLoadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownLoadManager.swift; sourceTree = "<group>"; };
 		8A7C51681F73959D00ED096E /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		8A7E9E161F7A319700E1B22A /* PlayListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListViewController.xib; sourceTree = "<group>"; };
+		8A7E9E1C1F7B4B8E00E1B22A /* WWSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWSlider.swift; sourceTree = "<group>"; };
+		8A7E9E1F1F7BA76700E1B22A /* rxtableview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rxtableview-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A7E9E201F7BA76800E1B22A /* NewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		8A7E9E211F7BA76800E1B22A /* NewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		8ACF1DD11F6F621D0028CB47 /* 郑俊弘 - 投降吧.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "郑俊弘 - 投降吧.mp3"; sourceTree = "<group>"; };
 		8FE73109092B429E347EF553 /* Pods_rxtableview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxtableview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +116,7 @@
 		8093C8901F56C7D0000FA8B6 /* rxtableview */ = {
 			isa = PBXGroup;
 			children = (
+				8A7E9E1E1F7BA73700E1B22A /* objc */,
 				8ACF1DD01F6F61FA0028CB47 /* Resources */,
 				8A5699C11F6F590700D50AF7 /* musicplayer */,
 				8A77E81B1F66811C00AC24DF /* download */,
@@ -133,12 +144,15 @@
 		8A5699C11F6F590700D50AF7 /* musicplayer */ = {
 			isa = PBXGroup;
 			children = (
+				8A7E9E1C1F7B4B8E00E1B22A /* WWSlider.swift */,
 				8A16DD471F750C9800CE9601 /* TableViewCell.swift */,
 				8A16DD481F750C9800CE9601 /* TableViewCell.xib */,
 				8A16DD451F750B0A00CE9601 /* LrcView.swift */,
 				8A5699C61F6F5A3100D50AF7 /* Song.swift */,
 				8A5699C21F6F59D700D50AF7 /* MusicViewController.swift */,
 				8A5699C31F6F59D700D50AF7 /* WeiMusicManager.swift */,
+				8A55EC0E1F79ECA700E6909C /* PlayListViewController.swift */,
+				8A7E9E161F7A319700E1B22A /* PlayListViewController.xib */,
 			);
 			path = musicplayer;
 			sourceTree = "<group>";
@@ -177,6 +191,16 @@
 				8A77E8191F667A1200AC24DF /* DownLoadViewController.swift */,
 			);
 			path = viewcontroller;
+			sourceTree = "<group>";
+		};
+		8A7E9E1E1F7BA73700E1B22A /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				8A7E9E201F7BA76800E1B22A /* NewViewController.h */,
+				8A7E9E211F7BA76800E1B22A /* NewViewController.m */,
+				8A7E9E1F1F7BA76700E1B22A /* rxtableview-Bridging-Header.h */,
+			);
+			path = objc;
 			sourceTree = "<group>";
 		};
 		8ACF1DD01F6F61FA0028CB47 /* Resources */ = {
@@ -232,6 +256,7 @@
 				TargetAttributes = {
 					8093C88D1F56C7D0000FA8B6 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -265,6 +290,7 @@
 				8A16DD441F750AF200CE9601 /* zxy@2x.jpg in Resources */,
 				8A16DD4A1F750C9800CE9601 /* TableViewCell.xib in Resources */,
 				8093C8991F56C7D0000FA8B6 /* Assets.xcassets in Resources */,
+				8A7E9E171F7A319700E1B22A /* PlayListViewController.xib in Resources */,
 				8093C8971F56C7D0000FA8B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,10 +370,13 @@
 				8A1FA89A1F590E0D0053A38D /* test.swift in Sources */,
 				8A77E8211F66857400AC24DF /* DownLoadManager.swift in Sources */,
 				8A5699C71F6F5A3100D50AF7 /* Song.swift in Sources */,
+				8A55EC0F1F79ECA700E6909C /* PlayListViewController.swift in Sources */,
 				8A04B3D11F57F37F007469AA /* DownloadTableViewCell.swift in Sources */,
+				8A7E9E1D1F7B4B8F00E1B22A /* WWSlider.swift in Sources */,
 				8093C8A61F57A4A9000FA8B6 /* DownloadSong.swift in Sources */,
 				8A5699C41F6F59D700D50AF7 /* MusicViewController.swift in Sources */,
 				8093C8921F56C7D0000FA8B6 /* AppDelegate.swift in Sources */,
+				8A7E9E221F7BA76800E1B22A /* NewViewController.m in Sources */,
 				8A1FA89C1F593B120053A38D /* TestViewModel.swift in Sources */,
 				8A7C51691F73959D00ED096E /* Download.swift in Sources */,
 			);
@@ -487,11 +516,14 @@
 			baseConfigurationReference = 0BF6EEEEE0E595EA0CE2DD07 /* Pods-rxtableview.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = SWEV8SETAZ;
 				INFOPLIST_FILE = rxtableview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.newwork.rxtableview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rxtableview/objc/rxtableview-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -502,11 +534,13 @@
 			baseConfigurationReference = 240A6698F4996D584E8C3C0B /* Pods-rxtableview.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = SWEV8SETAZ;
 				INFOPLIST_FILE = rxtableview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.newwork.rxtableview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rxtableview/objc/rxtableview-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
